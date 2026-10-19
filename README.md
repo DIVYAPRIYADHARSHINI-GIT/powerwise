@@ -9,8 +9,12 @@ PowerWise is a demo **smart electricity bill predictor** for Indian homes. You d
 
 ## 🌐 Live demo
 
-- **Live site:** _coming soon_
+- **Live site:** https://powerwise-dusky.vercel.app
 - **Source:** https://github.com/DIVYAPRIYADHARSHINI-GIT/powerwise
+
+Try it: [My bill](https://powerwise-dusky.vercel.app/predict) · [Appliances](https://powerwise-dusky.vercel.app/appliances) · [Savings tips](https://powerwise-dusky.vercel.app/tips) · [What-if](https://powerwise-dusky.vercel.app/what-if) · [Bill history](https://powerwise-dusky.vercel.app/history) · [12-month forecast](https://powerwise-dusky.vercel.app/forecast) · [Solar check](https://powerwise-dusky.vercel.app/solar) · [Reports](https://powerwise-dusky.vercel.app/reports) · [About the model](https://powerwise-dusky.vercel.app/about)
+
+Deployed on Vercel (Hobby). The project is connected to this GitHub repo, so every push to `main` deploys automatically. The live site passes the same 227-check headless-Chrome suite as local (`BASE_URL=https://powerwise-dusky.vercel.app npm run e2e`).
 
 ## ✨ Features
 

@@ -90,6 +90,11 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     };
   }, [lang]);
 
+  // Lets CSS/tests know when the chosen language's messages are on screen.
+  useEffect(() => {
+    document.documentElement.dataset.i18n = ready ? lang : "";
+  }, [ready, lang]);
+
   const setLang = useCallback((code: string) => {
     if (!LOCALE_CODES.includes(code)) return;
     try {

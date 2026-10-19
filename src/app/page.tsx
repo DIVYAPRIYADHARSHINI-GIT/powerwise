@@ -22,7 +22,7 @@ const FEATURES: Array<{ href: string; title: MessageKey; text: MessageKey; icon:
 
 export default function HomePage() {
   const s = useAppState();
-  const { t, money, num, month, appName, tk } = useI18n();
+  const { t, money, num, month, appName, tk, ready } = useI18n();
   const a = useAnalysis(s);
   const top = a.data?.breakdownNext.items[0];
   const tip = a.data?.tips[0];
@@ -30,7 +30,7 @@ export default function HomePage() {
   return (
     <div className="space-y-10">
       <section className="grid items-center gap-8 lg:grid-cols-2">
-        <div>
+        <div className={ready ? "" : "invisible"} aria-busy={!ready}>
           <SampleBadge kind="both" />
           <h1 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-5xl dark:text-white" data-testid="hero-title">
             {t("home.heroTitle")}
@@ -95,7 +95,7 @@ export default function HomePage() {
         </section>
       )}
 
-      <section>
+      <section className={ready ? "" : "invisible"}>
         <h2 className="mb-4 text-xl font-bold text-slate-900 dark:text-white">{t("home.features")}</h2>
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {FEATURES.map((f) => (

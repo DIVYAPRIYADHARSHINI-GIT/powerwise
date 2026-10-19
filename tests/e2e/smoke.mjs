@@ -77,7 +77,7 @@ async function step(name, fn) {
 }
 const noErrors = (p, label) => check(`${label}: no console errors`, p.errors.length === 0, p.errors.slice(0, 2).join(" | "));
 const overflow = (p) => p.eval("document.documentElement.scrollWidth - window.innerWidth");
-const ready = (p) => p.waitFor("!document.querySelector('[data-testid=loading]') && document.querySelector('[data-testid=page-title], [data-testid=hero-title]')", 6000);
+const ready = (p) => p.waitFor("document.documentElement.dataset.i18n === document.documentElement.lang && !document.querySelector('[data-testid=loading]') && document.querySelector('[data-testid=page-title], [data-testid=hero-title]')", 8000);
 const num = (s) => Number(String(s ?? "").replace(/[^\d.]/g, ""));
 const state = (p) => p.eval("JSON.parse(localStorage.getItem('powerwise.state.v1'))");
 async function setRange(p, sel, value) {
