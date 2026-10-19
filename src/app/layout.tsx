@@ -9,12 +9,12 @@ import {
   Noto_Sans_Gurmukhi,
   Noto_Sans_JP,
   Noto_Sans_Kannada,
-  Noto_Sans_Malayalam,
   Noto_Sans_Oriya,
   Noto_Sans_SC,
   Noto_Sans_Tamil,
   Noto_Sans_Telugu,
 } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { I18nProvider } from "@/i18n";
 import { themeInitScript } from "@/components/ThemeProvider";
@@ -31,7 +31,19 @@ const ta = Noto_Sans_Tamil({ subsets: ["tamil"], weight: ["400", "600", "700"], 
 const deva = Noto_Sans_Devanagari({ subsets: ["devanagari"], weight: ["400", "600", "700"], variable: "--font-deva", display: "swap", preload: false });
 const te = Noto_Sans_Telugu({ subsets: ["telugu"], weight: ["400", "600", "700"], variable: "--font-te", display: "swap", preload: false });
 const kn = Noto_Sans_Kannada({ subsets: ["kannada"], weight: ["400", "600", "700"], variable: "--font-kn", display: "swap", preload: false });
-const ml = Noto_Sans_Malayalam({ subsets: ["malayalam"], weight: ["400", "600", "700"], variable: "--font-ml", display: "swap", preload: false });
+// Noto Sans Malayalam is self-hosted (Malayalam subset, SIL OFL - see src/fonts/OFL.txt):
+// fetching it through next/font/google fails on Vercel's build machines.
+const ml = localFont({
+  src: [
+    { path: "../fonts/noto-sans-malayalam-400.woff2", weight: "400" },
+    { path: "../fonts/noto-sans-malayalam-600.woff2", weight: "600" },
+    { path: "../fonts/noto-sans-malayalam-700.woff2", weight: "700" },
+  ],
+  variable: "--font-ml",
+  display: "swap",
+  preload: false,
+  declarations: [{ prop: "unicode-range", value: "U+0307, U+0323, U+0951-0952, U+0964-0965, U+0D00-0D7F, U+1CDA, U+1CF2, U+200C-200D, U+25CC, U+A830-A832" }],
+});
 const bn = Noto_Sans_Bengali({ subsets: ["bengali"], weight: ["400", "600", "700"], variable: "--font-bn", display: "swap", preload: false });
 const gu = Noto_Sans_Gujarati({ subsets: ["gujarati"], weight: ["400", "600", "700"], variable: "--font-gu", display: "swap", preload: false });
 const pa = Noto_Sans_Gurmukhi({ subsets: ["gurmukhi"], weight: ["400", "600", "700"], variable: "--font-pa", display: "swap", preload: false });
