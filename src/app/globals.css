@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+/* Class-based dark mode (toggled on <html class="dark">). */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  /* Script fonts only download when their characters are on screen (unicode-range). */
+  --font-sans: var(--font-inter), var(--font-ta), var(--font-deva), var(--font-te), var(--font-kn), var(--font-ml), var(--font-bn), var(--font-gu), var(--font-pa), var(--font-or), var(--font-ar), var(--font-sc), ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+
+  --animate-pop-in: pop-in 0.25s cubic-bezier(0.2, 1.2, 0.4, 1) both;
+  --animate-float: float 5s ease-in-out infinite;
+  --animate-confetti: confetti 1.6s ease-out both;
+  --animate-pulse-glow: pulse-glow 2.4s ease-in-out infinite;
+  --animate-trophy: trophy 0.8s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+
+  @keyframes pop-in {
+    from { opacity: 0; transform: scale(0.94) translateY(6px); }
+    to { opacity: 1; transform: none; }
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+  @keyframes confetti {
+    0% { opacity: 1; transform: translate(0, 0) rotate(0deg) scale(0.6); }
+    80% { opacity: 1; }
+    100% { opacity: 0; transform: translate(var(--dx), var(--dy)) rotate(var(--rot)) scale(1); }
+  }
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.55; }
+    50% { opacity: 1; }
+  }
+  @keyframes trophy {
+    from { opacity: 0; transform: scale(0.3) rotate(-12deg); }
+    to { opacity: 1; transform: none; }
+  }
+}
+
+:root {
+  color-scheme: light;
+  --icon-body: #ffffff;
+  --icon-line: #334155;
+}
+.dark {
+  color-scheme: dark;
+  --icon-body: #1e293b;
+  --icon-line: #cbd5e1;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  @apply bg-[#fbfaf3] text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-200;
+  font-family: var(--font-sans);
+  overflow-wrap: break-word;
+}
+
+/* Per-language font priority (CJK share Han characters; Urdu uses Nastaliq). */
+html[lang="ja"] body {
+  font-family: var(--font-inter), var(--font-jp), "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+html[lang="zh"] body {
+  font-family: var(--font-inter), var(--font-sc), "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+html[lang="ur"] body {
+  font-family: var(--font-inter), var(--font-ur), var(--font-ar), sans-serif;
+  line-height: 2;
+}
+html[lang="ar"] body {
+  font-family: var(--font-inter), var(--font-ar), sans-serif;
+}
+
+/* Tall scripts need a little more line height. */
+html:is([lang="ta"], [lang="hi"], [lang="mr"], [lang="te"], [lang="kn"], [lang="ml"], [lang="bn"], [lang="gu"], [lang="pa"], [lang="or"], [lang="ar"]) body {
+  line-height: 1.65;
+}
+
+/* Numbers and amounts always read left-to-right, even inside RTL text. */
+.num {
+  unicode-bidi: isolate;
+  direction: ltr;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Range sliders: energy-yellow thumb on a neutral track. */
+input[type="range"].slider {
+  @apply h-2 w-full cursor-pointer appearance-none rounded-full bg-slate-200 dark:bg-slate-700;
+  accent-color: #f59e0b;
+}
+input[type="range"].slider::-webkit-slider-thumb {
+  @apply h-5 w-5 appearance-none rounded-full border-2 border-white bg-amber-400 shadow ring-1 ring-amber-500;
+}
+input[type="range"].slider::-moz-range-thumb {
+  @apply h-5 w-5 rounded-full border-2 border-white bg-amber-400 shadow;
+}
+
+.scrollbar-none {
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

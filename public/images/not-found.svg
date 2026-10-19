@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" width="280" height="200" role="img" aria-label="A dark house during a power cut with a torch beam">
+  <rect x="10" y="10" width="260" height="180" rx="28" fill="#1e293b"/>
+  <circle cx="222" cy="52" r="16" fill="#fde68a"/>
+  <circle cx="230" cy="46" r="14" fill="#1e293b"/>
+  <g fill="#fef9c3"><circle cx="50" cy="40" r="2"/><circle cx="90" cy="28" r="2"/><circle cx="170" cy="36" r="2"/></g>
+  <path d="M70 112 130 68l60 44v58H70z" fill="#334155" stroke="#64748b" stroke-width="4" stroke-linejoin="round"/>
+  <rect x="116" y="128" width="28" height="42" rx="4" fill="#0f172a"/>
+  <path d="M196 170 252 120v50z" fill="#fde047" opacity=".35"/>
+  <rect x="184" y="160" width="22" height="12" rx="3" fill="#fbbf24" transform="rotate(-40 195 166)"/>
+  <text x="130" y="108" font-family="Arial, sans-serif" font-size="22" font-weight="800" fill="#fbbf24" text-anchor="middle">404</text>
+</svg>

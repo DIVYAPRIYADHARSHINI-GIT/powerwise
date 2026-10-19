@@ -1,0 +1,210 @@
+{
+ "generated": "synthetic sample data, seed 42",
+ "dataset": {
+  "households": 1200,
+  "months": 30,
+  "rows": 36000,
+  "from": "2024-04",
+  "to": "2026-09",
+  "trainHouseholds": 960,
+  "testHouseholds": 240,
+  "meanUnits": 358,
+  "medianUnits": 290,
+  "shareAc": 47,
+  "shareSolar": 9,
+  "shareWfh": 38,
+  "monthlyByClimate": {
+   "hot": [
+    351,
+    337,
+    490,
+    545,
+    589,
+    552,
+    504,
+    497,
+    478,
+    474,
+    390,
+    354
+   ],
+   "moderate": [
+    227,
+    204,
+    267,
+    289,
+    301,
+    249,
+    237,
+    243,
+    242,
+    267,
+    242,
+    228
+   ],
+   "cool": [
+    252,
+    213,
+    225,
+    211,
+    212,
+    206,
+    217,
+    220,
+    212,
+    243,
+    248,
+    252
+   ]
+  }
+ },
+ "model": {
+  "algorithm": "HistGradientBoostingRegressor (scikit-learn)",
+  "trees": 400,
+  "maxLeafNodes": 24,
+  "learningRate": 0.07,
+  "target": "monthly units (kWh)",
+  "monotonic": true
+ },
+ "metrics": {
+  "gbm": {
+   "mae": 39.4,
+   "rmse": 61.7,
+   "r2": 0.931,
+   "mape": 13.2
+  },
+  "baseline": {
+   "mae": 132.0,
+   "rmse": 199.3,
+   "r2": 0.283,
+   "mape": 37.1
+  },
+  "linear": {
+   "mae": 39.6,
+   "rmse": 64.3,
+   "r2": 0.925,
+   "mape": 13.1
+  }
+ },
+ "range": {
+  "low": 0.848,
+  "high": 1.202
+ },
+ "importance": [
+  {
+   "feature": "ac_season",
+   "score": 126.0411,
+   "share": 58.1
+  },
+  {
+   "feature": "wfh_days",
+   "score": 12.4439,
+   "share": 5.7
+  },
+  {
+   "feature": "induction_load",
+   "score": 11.4456,
+   "share": 5.3
+  },
+  {
+   "feature": "solar_kw",
+   "score": 11.3803,
+   "share": 5.2
+  },
+  {
+   "feature": "solar_season",
+   "score": 11.2932,
+   "share": 5.2
+  },
+  {
+   "feature": "fan_load",
+   "score": 10.309,
+   "share": 4.7
+  },
+  {
+   "feature": "ev_load",
+   "score": 5.9561,
+   "share": 2.7
+  },
+  {
+   "feature": "fan_season",
+   "score": 5.2406,
+   "share": 2.4
+  },
+  {
+   "feature": "ac_temp",
+   "score": 4.7362,
+   "share": 2.2
+  },
+  {
+   "feature": "geyser_load",
+   "score": 3.4667,
+   "share": 1.6
+  },
+  {
+   "feature": "members",
+   "score": 2.1369,
+   "share": 1.0
+  },
+  {
+   "feature": "fridge_season",
+   "score": 1.8392,
+   "share": 0.8
+  },
+  {
+   "feature": "festival",
+   "score": 1.7237,
+   "share": 0.8
+  },
+  {
+   "feature": "geyser_season",
+   "score": 1.6862,
+   "share": 0.8
+  },
+  {
+   "feature": "month",
+   "score": 1.6268,
+   "share": 0.7
+  },
+  {
+   "feature": "light_load",
+   "score": 1.1541,
+   "share": 0.5
+  },
+  {
+   "feature": "bhk",
+   "score": 0.9229,
+   "share": 0.4
+  },
+  {
+   "feature": "ac_load",
+   "score": 0.7823,
+   "share": 0.4
+  },
+  {
+   "feature": "tv_load",
+   "score": 0.7613,
+   "share": 0.4
+  },
+  {
+   "feature": "climate",
+   "score": 0.7306,
+   "share": 0.3
+  },
+  {
+   "feature": "washer_load",
+   "score": 0.6806,
+   "share": 0.3
+  },
+  {
+   "feature": "iron_load",
+   "score": 0.6779,
+   "share": 0.3
+  },
+  {
+   "feature": "fridge_load",
+   "score": 0.0,
+   "share": 0.0
+  }
+ ]
+}

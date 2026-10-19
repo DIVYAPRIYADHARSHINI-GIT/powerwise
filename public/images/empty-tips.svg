@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" width="280" height="200" role="img" aria-label="A glowing light bulb with a leaf: your home is already efficient">
+  <ellipse cx="140" cy="182" rx="100" ry="10" fill="#bbf7d0" opacity=".7"/>
+  <circle cx="140" cy="86" r="70" fill="#fef3c7"/>
+  <path d="M140 34a40 40 0 0 0-24 72c5 4 8 9 8 16h32c0-7 3-12 8-16a40 40 0 0 0-24-72z" fill="#fde047" stroke="#334155" stroke-width="4"/>
+  <path d="M126 136h28M130 150h20" stroke="#334155" stroke-width="5" stroke-linecap="round"/>
+  <path d="M140 112V82c0-14 10-22 24-22 0 16-10 24-24 24" fill="#10b981" stroke="#047857" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M60 50l12 8M220 50l-12 8M46 96h14M220 96h14" stroke="#f59e0b" stroke-width="5" stroke-linecap="round"/>
+</svg>

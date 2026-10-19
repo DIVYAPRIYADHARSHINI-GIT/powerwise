@@ -1,0 +1,69 @@
+{
+ "household": {
+  "name": "Sharma family (sample)",
+  "city": "Chennai",
+  "climate": "hot",
+  "bhk": 2,
+  "members": 4,
+  "wfhDays": 2,
+  "solarKw": 0.0,
+  "appliances": {
+   "ac": {
+    "count": 1,
+    "hours": 7.0,
+    "temp": 22
+   },
+   "fridge": {
+    "count": 1,
+    "hours": 24.0,
+    "star": 3
+   },
+   "geyser": {
+    "count": 1,
+    "hours": 0.75
+   },
+   "washer": {
+    "count": 1,
+    "hours": 1.0
+   },
+   "tv": {
+    "count": 1,
+    "hours": 4.0
+   },
+   "fans": {
+    "count": 4,
+    "hours": 10.0
+   },
+   "lights": {
+    "count": 9,
+    "hours": 5.5
+   },
+   "iron": {
+    "count": 1,
+    "hours": 0.5
+   },
+   "induction": {
+    "count": 1,
+    "hours": 0.75
+   },
+   "ev": {
+    "count": 0,
+    "hours": 0.0
+   }
+  }
+ },
+ "unitsByMonth": [
+  429,
+  413,
+  558,
+  588,
+  641,
+  583,
+  574,
+  602,
+  534,
+  535,
+  477,
+  437
+ ]
+}

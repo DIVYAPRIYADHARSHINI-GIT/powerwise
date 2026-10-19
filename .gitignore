@@ -1,0 +1,39 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.*
+
+# Next.js / build output
+.next/
+out/
+build/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+
+# Vercel
+.vercel/
+.vercel
+
+# Environment files (never commit secrets)
+.env
+.env*
+.env*.local
+
+# Test output / temp
+tests/e2e/output/
+*.log
+npm-debug.log*
+.chrome-profile/
+tmp/
+.cache/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
